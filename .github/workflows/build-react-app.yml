@@ -19,11 +19,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: set up nodejs 14
+      - name: set up nodejs 18
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
       - name: clean install dependencies
         run: npm ci
       - name: build react app
