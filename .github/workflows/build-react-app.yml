@@ -42,7 +42,7 @@ jobs:
       - name: push to container registry
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./react-app
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.lables }}
