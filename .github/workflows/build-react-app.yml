@@ -5,7 +5,7 @@ on:
     branches:
       - release
 env:
-  REGISTRY: ghcr.io/${{ github.repository_owner }}
+  REGISTRY: ghcr.io
   IMAGE_NAME: react-app
 permissions:
   contents: read
@@ -31,7 +31,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          image: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
           type: sha
       - name: login to Github Registry
         uses: docker/login-action@v3
