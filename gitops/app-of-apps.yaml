@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-cd-root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/stlee321/gitops-with-argocd.git
+    targetRevision: HEAD
+    path: gitops/argo-cd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: react-app-root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/stlee321/gitops-with-argocd.git
+    targetRevision: HEAD
+    path: gitops/application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
