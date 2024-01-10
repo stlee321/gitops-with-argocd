@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/stlee321/gitops-with-argocd.git
     targetRevision: HEAD
-    path: reactapp
+    path: helm-charts/react-app
   destination:
     server: https://kubernetes.default.svc
     namespace: react-app
