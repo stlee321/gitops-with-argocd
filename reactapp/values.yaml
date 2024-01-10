@@ -1,0 +1,10 @@
+image:
+  name: ghcr.io/stlee321/react-app:0.9.0
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 8080
+  containerPort: 80
+ingress:
+  host: localhost
+  className: nginx
