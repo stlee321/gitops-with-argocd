@@ -46,4 +46,4 @@ jobs:
           context: ./react-app
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.lables }}
+          labels: ${{ steps.meta.outputs.labels }}
